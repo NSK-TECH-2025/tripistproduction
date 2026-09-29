@@ -1,0 +1,224 @@
+.tripist-accreditation {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 54px 0 44px;
+  background: #ffffff;
+  border-top: 1px solid rgba(15, 45, 82, 0.08);
+}
+
+.tripist-accreditation-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.tripist-accreditation-heading {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.tripist-accreditation-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #d4af37;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.tripist-accreditation-heading h2 {
+  margin: 0 0 10px;
+  color: #0f2d52;
+  font-size: clamp(1.6rem, 3.2vw, 2.15rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.tripist-accreditation-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Marquee Mask */
+.tripist-logo-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.tripist-logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* Row 1: Scrolling Left */
+.tripist-logo-track.scroll-left {
+  animation: scrollLeftMarquee 60s linear infinite;
+}
+
+/* Row 2: Scrolling Right */
+.tripist-logo-track.scroll-right {
+  animation: scrollRightMarquee 60s linear infinite;
+}
+
+@keyframes scrollLeftMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+@keyframes scrollRightMarquee {
+  from {
+    transform: translateX(calc(-50% - 10px));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pause when hovering over the marquee track */
+.tripist-logo-marquee:hover .tripist-logo-track {
+  animation-play-state: paused;
+}
+
+/* Logo Card:
+   Adjust these 4 variables manually anytime to control card & logo sizing */
+.tripist-partner-logo {
+  --card-w: 200px;
+  --card-h: 130px;
+  --logo-max-w: 200px;
+  --logo-max-h: 130px;
+
+  position: relative;
+  flex: 0 0 var(--card-w);
+  width: var(--card-w);
+  height: var(--card-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid rgba(15, 45, 82, 0.08);
+  border-radius: 12px;
+  background: #fae880ad;
+  box-shadow: 0 2px 8px rgba(15, 45, 82, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tripist-partner-logo:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15, 45, 82, 0.2) !important;
+  box-shadow: 0 6px 16px rgba(15, 45, 82, 0.12);
+}
+
+.tripist-partner-logo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: var(--logo-max-w);
+  max-height: var(--logo-max-h);
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition: transform 0.25s ease;
+}
+
+.tripist-partner-logo:hover img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.tripist-partner-placeholder {
+  color: #0f2d52;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.tripist-accreditation-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tripist-accreditation-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.5);
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 992px) {
+  .tripist-partner-logo {
+    --card-w: 180px;
+    --card-h: 98px;
+    --logo-max-w: 155px;
+    --logo-max-h: 80px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .tripist-accreditation {
+    padding: 40px 0 32px;
+  }
+
+  .tripist-logo-track {
+    gap: 12px;
+  }
+
+  @keyframes scrollLeftMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 6px));
+    }
+  }
+
+  @keyframes scrollRightMarquee {
+    from {
+      transform: translateX(calc(-50% - 6px));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .tripist-partner-logo {
+    --card-w: 150px;
+    --card-h: 84px;
+    --logo-max-w: 125px;
+    --logo-max-h: 64px;
+    padding: 8px 10px;
+  }
+
+  .tripist-partner-placeholder {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tripist-logo-track {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,164 @@
+/* Brand Color Variables */
+:root {
+  --tripist-navy: #0F2D52;
+  --tripist-gold: #D4AF37;
+  --tripist-teal: #0FA3B1;
+}
+
+.text-navy {
+  color: var(--tripist-navy);
+}
+
+/* 1. Added generous top spacing to prevent sticking to hero section */
+.destination-section {
+  padding-top: 55px;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+/* 2. Header & Left-aligned Layout */
+.destination-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keeps everything aligned to the left */
+  margin-bottom: 24px;
+  gap: 14px;
+}
+
+.dest-text-wrapper {
+  width: 100%;
+}
+
+.destination-header h2 {
+  font-size: 26px;
+  line-height: 1.25;
+  color: var(--tripist-navy);
+}
+
+.horline {
+  width: 28px;
+  height: 2px;
+  background-color: var(--tripist-gold);
+  flex-shrink: 0;
+}
+
+/* 3. Slider Navigation Buttons Aligned to the Left */
+.slider-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; /* Positions buttons to the left */
+  margin-top: 4px;
+}
+
+.custom-prev,
+.custom-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--tripist-navy);
+  color: var(--tripist-gold);
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  user-select: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  background-color: var(--tripist-gold);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.custom-prev.swiper-button-disabled,
+.custom-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 4. Card Styling */
+.destination-card {
+  text-align: center;
+  height: auto !important;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+}
+
+.destination-image-container {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 240px;
+  position: relative;
+  background-color: #eceff1;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.destination-card:hover img {
+  transform: scale(1.08);
+}
+
+.swiper {
+  height: auto;
+}
+
+.destination-swiper .swiper-slide {
+  height: fit-content !important;
+}
+
+.destination-title {
+  font-size: 18px;
+  transition: color 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.destination-card:hover .destination-title {
+  color: var(--tripist-gold) !important;
+}
+
+/* 5. Responsive Queries */
+@media (min-width: 768px) {
+  .destination-section {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .destination-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .destination-header h2 {
+    font-size: 32px;
+  }
+
+  .destination-image-container {
+    height: 260px;
+  }
+
+  .custom-prev,
+  .custom-next {
+    width: 48px;
+    height: 48px;
+  }
+}
